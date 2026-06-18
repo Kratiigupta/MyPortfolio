@@ -3,6 +3,7 @@ import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { personalInfo } from '../data/portfolioData';
 import { SiLeetcode } from 'react-icons/si';
+import profileImg from '../assets/profile.jpg';
 
 export default function Hero() {
   const typedText = useTypingEffect(personalInfo.roles, 120, 60, 1800);
@@ -122,10 +123,11 @@ export default function Hero() {
             
             {/* Image container */}
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
-              {/* Placeholder avatar - gradient with initials */}
-              <div className="w-full h-full bg-gradient-to-br from-primary/40 via-dark-card to-secondary/40 flex items-center justify-center">
-                <span className="text-7xl md:text-8xl font-bold text-white/40">KG</span>
-              </div>
+              <img
+                src={profileImg}
+                alt="Krati Gupta"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Floating decorative elements */}
