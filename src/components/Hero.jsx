@@ -1,0 +1,151 @@
+import { motion } from 'framer-motion';
+import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { useTypingEffect } from '../hooks/useTypingEffect';
+import { personalInfo } from '../data/portfolioData';
+import { SiLeetcode } from 'react-icons/si';
+
+export default function Hero() {
+  const typedText = useTypingEffect(personalInfo.roles, 120, 60, 1800);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-dark-bg">
+        {/* Gradient orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[120px] animate-float" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/15 rounded-full blur-[120px] animate-float-delayed" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]" />
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center pt-20">
+        {/* Left - Text */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
+          >
+            <span className="text-lg">👋</span>
+            <span className="text-primary text-sm font-medium">Hello, I'm</span>
+          </motion.div>
+
+          {/* Name */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
+            Krati{' '}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Gupta
+            </span>
+          </h1>
+
+          {/* Typing effect */}
+          <div className="text-2xl md:text-3xl font-semibold text-primary mb-6 h-10">
+            <span>{typedText}</span>
+            <span className="animate-typing-cursor text-primary">|</span>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-400 text-lg max-w-lg mb-10 leading-relaxed">
+            {personalInfo.tagline}
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 mb-10">
+            <a
+              href="#projects"
+              onClick={(e) => handleNavClick(e, '#projects')}
+              className="group flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-primary to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              View Projects
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href={personalInfo.resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-7 py-3.5 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:bg-white/5 hover:border-gray-500 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <Download size={18} />
+              Download Resume
+            </a>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-4">
+            {[
+              { icon: <Github size={20} />, href: personalInfo.github, label: 'GitHub' },
+              { icon: <Linkedin size={20} />, href: personalInfo.linkedin, label: 'LinkedIn' },
+              { icon: <SiLeetcode size={20} />, href: personalInfo.leetcode, label: 'LeetCode' },
+              { icon: <Mail size={20} />, href: `mailto:${personalInfo.email}`, label: 'Email' },
+            ].map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Right - Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+          className="flex justify-center lg:justify-end"
+        >
+          <div className="relative">
+            {/* Glow ring */}
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary via-secondary to-primary opacity-30 blur-2xl animate-glow-pulse" />
+            
+            {/* Image container */}
+            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
+              {/* Placeholder avatar - gradient with initials */}
+              <div className="w-full h-full bg-gradient-to-br from-primary/40 via-dark-card to-secondary/40 flex items-center justify-center">
+                <span className="text-7xl md:text-8xl font-bold text-white/40">KG</span>
+              </div>
+            </div>
+
+            {/* Floating decorative elements */}
+            <motion.div
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -top-6 -right-6 w-16 h-16 rounded-2xl bg-primary/20 border border-primary/30 backdrop-blur-sm flex items-center justify-center text-2xl"
+            >
+              💻
+            </motion.div>
+            <motion.div
+              animate={{ y: [10, -10, 10] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -bottom-4 -left-8 w-14 h-14 rounded-2xl bg-secondary/20 border border-secondary/30 backdrop-blur-sm flex items-center justify-center text-xl"
+            >
+              ⚡
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
