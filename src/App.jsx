@@ -20,6 +20,7 @@ import CommandPalette from './components/CommandPalette';
 
 // Pages
 import ProjectsPage from './pages/ProjectsPage';
+import CertificatesPage from './pages/CertificatesPage';
 
 function HomePage() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/certificates" element={<CertificatesPage />} />
         </Routes>
       </div>
     </HashRouter>

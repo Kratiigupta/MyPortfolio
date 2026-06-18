@@ -8,15 +8,25 @@ import {
   SiNodedotjs,
   SiMongodb,
   SiGit,
+  SiTypescript,
+  SiPython,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPostgresql
 } from 'react-icons/si';
-import { FaJava } from 'react-icons/fa';
+import { BsFiletypeSql } from 'react-icons/bs';
 
 const iconMap = {
   cpp: { icon: SiCplusplus, color: '#00599C' },
-  java: { icon: FaJava, color: '#ED8B00' },
   javascript: { icon: SiJavascript, color: '#F7DF1E' },
+  typescript: { icon: SiTypescript, color: '#3178C6' },
+  python: { icon: SiPython, color: '#3776AB' },
+  sql: { icon: BsFiletypeSql, color: '#F29111' },
   react: { icon: SiReact, color: '#61DAFB' },
+  nextjs: { icon: SiNextdotjs, color: '#ffffff' },
+  tailwind: { icon: SiTailwindcss, color: '#06B6D4' },
   nodejs: { icon: SiNodedotjs, color: '#339933' },
+  postgresql: { icon: SiPostgresql, color: '#4169E1' },
   mongodb: { icon: SiMongodb, color: '#47A248' },
   git: { icon: SiGit, color: '#F05032' },
 };
@@ -50,7 +60,7 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ y: -8, scale: 1.05 }}
                 className="group relative"
               >
@@ -65,7 +75,7 @@ export default function Skills() {
                       style={{ color: iconData.color }}
                     />
                   )}
-                  <span className="relative z-10 text-xs font-medium text-gray-400 group-hover:text-white transition-colors">
+                  <span className="relative z-10 text-xs font-medium text-gray-400 text-center group-hover:text-white transition-colors">
                     {skill.name}
                   </span>
                 </div>

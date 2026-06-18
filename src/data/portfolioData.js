@@ -1,21 +1,22 @@
-import tradingImg from '../assets/projects/trading.png';
-import portfolioImg from '../assets/projects/portfolio.png';
-import dsaImg from '../assets/projects/dsa.png';
+import sudarshanImg from '../assets/projects/sudarshan.png';
+import smarteduImg from '../assets/projects/smartedu.png';
+import rudraImg from '../assets/projects/rudra.png';
 
 export const personalInfo = {
   name: 'Krati Gupta',
-  roles: ['Software Developer', 'Frontend Developer', 'Problem Solver', 'DSA Enthusiast'],
-  tagline: 'I build amazing web experiences and love solving complex problems with clean code.',
+  roles: ['Software Developer', 'Full Stack Developer', 'Problem Solver', 'DSA Enthusiast'],
+  tagline: 'BCA student with a strong interest in software development and problem-solving. A quick learner with strong teamwork skills, seeking to build impactful real-world projects.',
   email: 'kratigupta.2433353@gmail.com',
   phone: '+91 91257 09300',
-  location: 'India',
-  education: 'B.Tech CSE',
-  college: 'PSIT College',
-  github: 'https://github.com/kratiigupta',
-  githubUsername: 'kratiigupta',
-  linkedin: 'https://linkedin.com/in/kratiigupta',
-  leetcode: 'https://leetcode.com/kratiigupta',
-  resumeLink: '#',
+  location: 'Unnao, UP',
+  education: 'B.C.A.',
+  college: 'PSIT College of Higher Education',
+  github: 'https://github.com/Kratiigupta',
+  githubUsername: 'Kratiigupta',
+  linkedin: 'https://linkedin.com/in/krati-gupta25',
+  leetcode: 'https://leetcode.com/u/kratii_gupta/',
+  hackerrank: 'https://www.hackerrank.com/profile/24116002282_krti',
+  resumeLink: 'https://drive.google.com/file/d/1MmF68Su7TsHSx-T2CRlnbc7qXzWvQKZj/view?usp=drive_link',
 };
 
 export const navLinks = [
@@ -23,25 +24,33 @@ export const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Achievements', href: '#achievements' },
+  { name: 'Certificates', href: '/certificates' },
   { name: 'Contact', href: '#contact' },
 ];
 
-export const aboutText = `I'm a Computer Science student passionate about Data Structures, Algorithms, and Web Development. Currently, I'm focusing on building real-world projects and improving my problem-solving skills.`;
+export const aboutText = `I am a BCA student at PSIT College of Higher Education (2027) with an 8.72 CGPA. I have a strong interest in software development, problem-solving, and building robust web applications. I am experienced in working on both academic and personal projects, participating in technical events, and engaging in research activities. I'm a quick learner with strong communication skills, eager to gain industry experience.`;
 
 export const timeline = [
-  { year: '2024', label: 'Started Coding' },
-  { year: '2025', label: 'DSA & Web Dev' },
-  { year: '2026', label: 'Building Projects' },
-  { year: 'Future', label: 'Impacting Lives' },
+  { year: '2022', label: 'High School (84%)' },
+  { year: '2024', label: 'Intermediate (75%)' },
+  { year: '2025', label: 'Research & Projects' },
+  { year: '2027', label: 'BCA Graduation' },
 ];
 
 export const skills = [
-  { name: 'C++', icon: 'cpp' },
-  { name: 'Java', icon: 'java' },
+  // Languages
   { name: 'JavaScript', icon: 'javascript' },
-  { name: 'React', icon: 'react' },
+  { name: 'TypeScript', icon: 'typescript' },
+  { name: 'Python', icon: 'python' },
+  { name: 'C++', icon: 'cpp' },
+  { name: 'SQL', icon: 'sql' },
+  // Frontend
+  { name: 'React.js', icon: 'react' },
+  { name: 'Next.js', icon: 'nextjs' },
+  { name: 'Tailwind CSS', icon: 'tailwind' },
+  // Backend & DB
   { name: 'Node.js', icon: 'nodejs' },
+  { name: 'PostgreSQL', icon: 'postgresql' },
   { name: 'MongoDB', icon: 'mongodb' },
   { name: 'Git', icon: 'git' },
 ];
@@ -49,100 +58,136 @@ export const skills = [
 export const featuredProjects = [
   {
     id: 1,
-    title: 'AI Trading Journal',
-    description: 'Track, analyze and improve your trades using AI insights and powerful analytics.',
-    tech: ['React', 'Node.js', 'MongoDB'],
-    image: tradingImg,
+    title: 'Sudarshan - Travel & Tourism',
+    description: 'A responsive full-stack travel platform featuring destination discovery, dynamic safety management, and user-friendly booking workflows.',
+    tech: ['React.js', 'Node.js', 'Express.js', 'Supabase', 'PostgreSQL'],
+    image: sudarshanImg,
     live: '#',
-    github: 'https://github.com/kratiigupta',
+    github: 'https://github.com/Kratiigupta',
     category: 'fullstack',
-    features: ['Trade tracking', 'Analytics dashboard', 'AI-powered insights', 'Portfolio management'],
+    features: ['Destination discovery', 'Safety management', 'Booking workflows', 'Responsive design'],
   },
   {
     id: 2,
-    title: 'Portfolio Builder',
-    description: 'Build stunning portfolios in minutes with modern templates.',
-    tech: ['React', 'Tailwind CSS', 'Vite'],
-    image: portfolioImg,
+    title: 'Smart Edu Campus',
+    description: 'A comprehensive campus management platform supporting student, faculty, and administrative workflows.',
+    tech: ['Next.js', 'React.js', 'TypeScript', 'PostgreSQL'],
+    image: smarteduImg,
     live: '#',
-    github: 'https://github.com/kratiigupta',
+    github: 'https://github.com/Kratiigupta',
     category: 'web',
-    features: ['Drag & drop builder', 'Modern templates', 'One-click deploy', 'Custom domains'],
+    features: ['Student workflows', 'Faculty management', 'Administrative dashboard', 'Real-time analytics'],
   },
   {
     id: 3,
-    title: 'DSA Tracker',
-    description: 'Track your DSA journey, problem stats and maintain consistency.',
-    tech: ['React', 'Node.js', 'MongoDB'],
-    image: dsaImg,
+    title: 'Rudra IDS',
+    description: 'An AI-powered intrusion detection system capable of identifying and classifying network attacks using machine learning algorithms.',
+    tech: ['Python', 'Machine Learning'],
+    image: rudraImg,
     live: '#',
-    github: 'https://github.com/kratiigupta',
-    category: 'fullstack',
-    features: ['Progress tracking', 'Problem categorization', 'Streak counter', 'Analytics'],
+    github: 'https://github.com/Kratiigupta',
+    category: 'ai',
+    features: ['Anomaly detection', 'Network classification', 'Machine learning', 'Traffic analysis'],
   },
 ];
 
-export const allProjects = [
-  ...featuredProjects,
-  {
-    id: 4,
-    title: 'TaskFlow - CRUD App',
-    description: 'MERN stack task manager with authentication and real-time updates.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-    image: null,
-    live: '#',
-    github: 'https://github.com/kratiigupta',
-    category: 'fullstack',
-    features: ['Authentication', 'CRUD operations', 'Real-time updates', 'Responsive UI'],
-  },
-  {
-    id: 5,
-    title: 'Smart India Hackathon Website',
-    description: 'Team-built responsive website under 72-hour hackathon pressure.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    image: null,
-    live: '#',
-    github: 'https://github.com/kratiigupta',
-    category: 'web',
-    features: ['Responsive design', 'Team collaboration', 'Fast delivery', 'Modern UI'],
-  },
-  {
-    id: 6,
-    title: 'Intrusion Detection System',
-    description: 'Minor project on network threat detection using Python.',
-    tech: ['Python', 'Networking'],
-    image: null,
-    live: '#',
-    github: 'https://github.com/kratiigupta',
-    category: 'security',
-    features: ['Threat detection', 'Network monitoring', 'Alert system', 'Log analysis'],
-  },
-];
+export const allProjects = [...featuredProjects];
 
 export const achievements = [
-  { icon: 'trophy', number: 500, suffix: '+', label: 'Problems Solved' },
-  { icon: 'folder', number: 15, suffix: '+', label: 'Projects' },
-  { icon: 'certificate', number: 5, suffix: '+', label: 'Certifications' },
-  { icon: 'code', number: 2, suffix: '', label: 'Hackathons' },
-];
-
-export const certifications = [
-  'Python & Software Engineering – Infosys Springboard',
-  'Problem Solving, CSS & JavaScript – HackerRank',
-  'Networking & Cyber Security – Cisco Networking Academy',
-  'Secretary, Codester Club – PSIT College',
-  'Smart India Hackathon 2025 Participant',
+  { icon: 'code', number: 150, suffix: '+', label: 'Problems Solved' },
+  { icon: 'folder', number: 3, suffix: '+', label: 'Major Projects' },
+  { icon: 'certificate', number: 3, suffix: '', label: 'Research Papers' },
+  { icon: 'trophy', number: 5, suffix: '+', label: 'Certifications' },
 ];
 
 export const commandPaletteItems = [
   { name: 'Projects', icon: '📁', action: '#projects', type: 'navigate' },
   { name: 'All Projects', icon: '🗂️', action: '/projects', type: 'route' },
-  { name: 'Resume', icon: '📄', action: '#', type: 'download' },
+  { name: 'Certificates', icon: '📜', action: '/certificates', type: 'route' },
+  { name: 'Resume', icon: '📄', action: personalInfo.resumeLink, type: 'external' },
   { name: 'Contact', icon: '📧', action: '#contact', type: 'navigate' },
-  { name: 'GitHub', icon: '🐙', action: 'https://github.com/kratiigupta', type: 'external' },
-  { name: 'LinkedIn', icon: '💼', action: 'https://linkedin.com/in/kratiigupta', type: 'external' },
-  { name: 'LeetCode', icon: '⚡', action: 'https://leetcode.com/kratiigupta', type: 'external' },
+  { name: 'GitHub', icon: '🐙', action: personalInfo.github, type: 'external' },
+  { name: 'LinkedIn', icon: '💼', action: personalInfo.linkedin, type: 'external' },
+  { name: 'LeetCode', icon: '⚡', action: personalInfo.leetcode, type: 'external' },
+  { name: 'HackerRank', icon: '💻', action: personalInfo.hackerrank, type: 'external' },
   { name: 'About', icon: '👤', action: '#about', type: 'navigate' },
   { name: 'Skills', icon: '🛠️', action: '#skills', type: 'navigate' },
-  { name: 'Achievements', icon: '🏆', action: '#achievements', type: 'navigate' },
+];
+
+// Certificates Data
+export const certificatesList = [
+  {
+    id: 1,
+    title: 'C++ Essentials',
+    issuer: 'Cisco Networking Academy',
+    category: 'Programming',
+    icon: 'cisco',
+    link: '#'
+  },
+  {
+    id: 2,
+    title: 'Python Essentials',
+    issuer: 'Cisco Networking Academy',
+    category: 'Programming',
+    icon: 'cisco',
+    link: '#'
+  },
+  {
+    id: 3,
+    title: 'AI and Cybersecurity Awareness',
+    issuer: 'TCS Foundation',
+    category: 'Cybersecurity',
+    icon: 'tcs',
+    link: '#'
+  },
+  {
+    id: 4,
+    title: 'Generative AI Essentials',
+    issuer: 'TCS Foundation',
+    category: 'AI/ML',
+    icon: 'tcs',
+    link: '#'
+  },
+  {
+    id: 5,
+    title: 'Python for Data Science',
+    issuer: 'Infosys Springboard',
+    category: 'Data Science',
+    icon: 'infosys',
+    link: '#'
+  },
+  {
+    id: 6,
+    title: 'Software Engineering',
+    issuer: 'Infosys Springboard',
+    category: 'Engineering',
+    icon: 'infosys',
+    link: '#'
+  },
+  {
+    id: 7,
+    title: 'Problem Solving (Basic)',
+    issuer: 'HackerRank',
+    category: 'Problem Solving',
+    icon: 'hackerrank',
+    link: 'https://www.hackerrank.com/profile/24116002282_krti'
+  },
+];
+
+export const researchList = [
+  {
+    title: 'The Fundamental Theorem of Arithmetic',
+    role: 'Presenter',
+    event: 'ICNGTSE 2025, PSIT Kanpur',
+  },
+  {
+    title: 'Mathematical Structure of Fibonacci Numbers',
+    role: 'Co-Author',
+    event: 'ICNGTSE 2025, PSIT Kanpur',
+  },
+  {
+    title: 'AI-Driven Hybrid Intrusion Detection Systems',
+    role: 'Ongoing Research',
+    event: 'A Comprehensive Survey',
+  }
 ];

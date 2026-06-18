@@ -3,10 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Menu, X, Settings } from 'lucide-react';
 import { navLinks, personalInfo } from '../data/portfolioData';
 import { useActiveSection } from '../hooks/useActiveSection';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const activeSection = useActiveSection(['home', 'about', 'skills', 'projects', 'achievements', 'contact']);
 
   useEffect(() => {
@@ -18,6 +21,21 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setMobileOpen(false);
+    
+    if (href.startsWith('/')) {
+      navigate(href);
+      return;
+    }
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
@@ -53,11 +71,11 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-sm font-medium transition-colors duration-200 relative ${
-                  isActive ? 'text-primary' : 'text-gray-400 hover:text-white'
+                  (isActive && link.href.startsWith('#')) || location.pathname === link.href ? 'text-primary' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 {link.name}
-                {isActive && (
+                {((isActive && link.href.startsWith('#')) || location.pathname === link.href) && (
                   <motion.div
                     layoutId="activeNav"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Trophy, FolderOpen, Award, Code2 } from 'lucide-react';
+import { Trophy, FolderOpen, Award, Code2, ArrowRight } from 'lucide-react';
 import { useCountUp } from '../hooks/useCountUp';
 import { achievements } from '../data/portfolioData';
 
@@ -39,11 +39,42 @@ export default function Achievements() {
   return (
     <section id="achievements" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-3 mb-12"
+        >
+          <div className="p-2 rounded-lg bg-primary/10 text-primary">
+            <Trophy size={22} />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Achievements & Certifications</h2>
+        </motion.div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {achievements.map((achievement, i) => (
             <StatCard key={achievement.label} achievement={achievement} index={i} />
           ))}
         </div>
+
+        {/* View Certificates Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 flex justify-center"
+        >
+          <a
+            href="#/certificates"
+            className="group flex items-center gap-2 px-6 py-3 border border-white/10 text-gray-300 font-medium rounded-xl hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:text-white"
+          >
+            View All Certificates
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
