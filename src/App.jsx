@@ -17,9 +17,11 @@ import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';
 import BackToTop from './components/BackToTop';
 import CommandPalette from './components/CommandPalette';
+import ThemeCustomizer from './components/ThemeCustomizer';
+import { ThemeProvider } from './context/ThemeContext';
+import Hero3D from './components/Hero3D';
 
 // Pages
-import ProjectsPage from './pages/ProjectsPage';
 import CertificatesPage from './pages/CertificatesPage';
 
 function HomePage() {
@@ -42,20 +44,25 @@ function HomePage() {
 
 function App() {
   return (
-    <HashRouter>
-      <div className="bg-dark-bg min-h-screen text-white">
-        <ScrollProgress />
-        <CustomCursor />
-        <CommandPalette />
-        <BackToTop />
+    <ThemeProvider>
+      <HashRouter>
+        <div className="bg-dark-bg min-h-screen text-white relative">
+          <Hero3D />
+          <div className="relative z-10">
+            <ScrollProgress />
+            <CustomCursor />
+            <CommandPalette />
+            <ThemeCustomizer />
+            <BackToTop />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/certificates" element={<CertificatesPage />} />
-        </Routes>
-      </div>
-    </HashRouter>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/certificates" element={<CertificatesPage />} />
+            </Routes>
+          </div>
+        </div>
+      </HashRouter>
+    </ThemeProvider>
   );
 }
 

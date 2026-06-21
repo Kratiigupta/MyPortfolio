@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, Github, Linkedin } from 'lucide-react';
-import { SiLeetcode } from 'react-icons/si';
-import emailjs from '@emailjs/browser';
+import { Mail, Send, Phone, MapPin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
@@ -14,22 +12,32 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
     try {
-      await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_PUBLIC_KEY');
-      setSent(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setSent(false), 3000);
+      const response = await fetch(`https://formsubmit.co/ajax/${personalInfo.email}`, {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        setSent(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSent(false), 4000);
+      } else {
+        throw new Error('Failed to send');
+      }
     } catch {
-      alert('Please try again');
+      alert('Something went wrong. Please email directly at ' + personalInfo.email);
     }
     setSending(false);
   };
 
-  const socials = [
-    { icon: <Github size={20} />, href: personalInfo.github, label: 'GitHub' },
-    { icon: <Linkedin size={20} />, href: personalInfo.linkedin, label: 'LinkedIn' },
-    { icon: <Mail size={20} />, href: `mailto:${personalInfo.email}`, label: 'Email' },
-    { icon: <SiLeetcode size={20} />, href: personalInfo.leetcode, label: 'LeetCode' },
-  ];
 
   return (
     <section id="contact" className="py-24 relative">
@@ -61,24 +69,39 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-white mb-4">
                 Let's connect and build something amazing together!
               </h3>
-              <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
 
-              {/* Social Links */}
-              <div className="flex gap-3">
-                {socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+              {/* Direct Contact Info */}
+              <div className="space-y-3 mb-8">
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-primary/30 transition-colors group"
+                >
+                  <Mail size={16} className="text-primary" />
+                  <div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-wider">Email</div>
+                    <div className="text-white text-sm group-hover:text-primary transition-colors">{personalInfo.email}</div>
+                  </div>
+                </a>
+                <a
+                  href={`tel:${personalInfo.phone}`}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-primary/30 transition-colors group"
+                >
+                  <Phone size={16} className="text-primary" />
+                  <div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-wider">Phone</div>
+                    <div className="text-white text-sm group-hover:text-primary transition-colors">{personalInfo.phone}</div>
+                  </div>
+                </a>
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                  <MapPin size={16} className="text-primary" />
+                  <div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-wider">Location</div>
+                    <div className="text-white text-sm">{personalInfo.location}</div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -116,7 +139,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={sending}
-                className="flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-purple-600 text-pure-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {sent ? (
                   <>✓ Message Sent!</>
@@ -129,6 +152,9 @@ export default function Contact() {
                   </>
                 )}
               </button>
+              <p className="text-[11px] text-gray-500">
+                Your message will be sent directly to my inbox.
+              </p>
             </form>
           </div>
         </motion.div>

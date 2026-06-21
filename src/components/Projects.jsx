@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FolderGit2, ExternalLink, Github, ArrowRight, X } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { FolderGit2, ExternalLink, Github, X } from 'lucide-react';
 import { featuredProjects } from '../data/portfolioData';
 
 function ProjectModal({ project, onClose }) {
@@ -73,15 +72,17 @@ function ProjectModal({ project, onClose }) {
 
           {/* Actions */}
           <div className="flex gap-3">
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-medium rounded-xl transition-colors"
-            >
-              <ExternalLink size={16} />
-              Live Demo
-            </a>
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-medium rounded-xl transition-colors"
+              >
+                <ExternalLink size={16} />
+                Live Demo
+              </a>
+            )}
             <a
               href={project.github}
               target="_blank"
@@ -100,7 +101,6 @@ function ProjectModal({ project, onClose }) {
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
-  const navigate = useNavigate();
 
   return (
     <>
@@ -112,21 +112,12 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-between mb-12"
+            className="flex items-center gap-3 mb-12"
           >
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <FolderGit2 size={22} />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
+            <div className="p-2 rounded-lg bg-primary/10 text-primary">
+              <FolderGit2 size={22} />
             </div>
-            <button
-              onClick={() => navigate('/projects')}
-              className="hidden md:flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors group"
-            >
-              View All Projects
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
           </motion.div>
 
           {/* Projects Grid */}
@@ -156,6 +147,9 @@ export default function Projects() {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent" />
+                  <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-medium bg-primary/80 text-white rounded-lg backdrop-blur-sm">
+                    {project.category}
+                  </span>
                 </div>
 
                 {/* Content */}
@@ -179,16 +173,18 @@ export default function Projects() {
 
                   {/* Links */}
                   <div className="flex items-center gap-4 text-sm">
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-1.5 text-gray-400 hover:text-primary transition-colors"
-                    >
-                      <ExternalLink size={14} />
-                      Live Demo
-                    </a>
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-gray-400 hover:text-primary transition-colors"
+                      >
+                        <ExternalLink size={14} />
+                        Live Demo
+                      </a>
+                    )}
                     <a
                       href={project.github}
                       target="_blank"
@@ -204,22 +200,6 @@ export default function Projects() {
               </motion.div>
             ))}
           </div>
-
-          {/* Mobile View All */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="md:hidden mt-8 text-center"
-          >
-            <button
-              onClick={() => navigate('/projects')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 border border-primary/20 text-primary text-sm font-medium rounded-xl hover:bg-primary/20 transition-colors"
-            >
-              View All Projects
-              <ArrowRight size={16} />
-            </button>
-          </motion.div>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Trophy, FolderOpen, Award, Code2, ArrowRight } from 'lucide-react';
 import { useCountUp } from '../hooks/useCountUp';
-import { achievements } from '../data/portfolioData';
+import { achievements, achievementHighlights } from '../data/portfolioData';
 
 const iconMap = {
   trophy: Trophy,
@@ -50,12 +50,37 @@ export default function Achievements() {
           <div className="p-2 rounded-lg bg-primary/10 text-primary">
             <Trophy size={22} />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Achievements & Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Achievements</h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
           {achievements.map((achievement, i) => (
             <StatCard key={achievement.label} achievement={achievement} index={i} />
+          ))}
+        </div>
+
+        {/* Achievement Highlights */}
+        <div className="grid sm:grid-cols-2 gap-4">
+          {achievementHighlights.map((highlight, i) => (
+            <motion.div
+              key={highlight.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+              className="glass-card rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group"
+            >
+              <div className="flex items-start gap-4">
+                <span className="text-2xl flex-shrink-0">{highlight.icon}</span>
+                <div>
+                  <h3 className="text-white font-semibold text-sm mb-1 group-hover:text-primary transition-colors">
+                    {highlight.title}
+                  </h3>
+                  <p className="text-xs text-gray-400 leading-relaxed">{highlight.description}</p>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 
@@ -71,7 +96,7 @@ export default function Achievements() {
             href="#/certificates"
             className="group flex items-center gap-2 px-6 py-3 border border-white/10 text-gray-300 font-medium rounded-xl hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:text-white"
           >
-            View All Certificates
+            View All 10 Certifications
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>

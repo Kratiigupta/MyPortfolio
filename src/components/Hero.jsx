@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { personalInfo } from '../data/portfolioData';
-import { SiLeetcode } from 'react-icons/si';
+import { SiLeetcode, SiHackerrank } from 'react-icons/si';
 import profileImg from '../assets/profile.jpg';
 
 export default function Hero() {
@@ -17,15 +17,15 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-dark-bg">
+      <div className="absolute inset-0 pointer-events-none">
         {/* Gradient orbs */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[120px] animate-float" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/15 rounded-full blur-[120px] animate-float-delayed" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]" />
         
         {/* Grid pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03] opacity-10" style={{
+          backgroundImage: 'linear-gradient(rgba(128,128,128,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(128,128,128,0.5) 1px, transparent 1px)',
           backgroundSize: '50px 50px'
         }} />
       </div>
@@ -49,7 +49,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
             Krati{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Gupta
@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
 
           {/* Description */}
-          <p className="text-gray-400 text-lg max-w-lg mb-10 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-lg mb-10 leading-relaxed">
             {personalInfo.tagline}
           </p>
 
@@ -72,7 +72,7 @@ export default function Hero() {
             <a
               href="#projects"
               onClick={(e) => handleNavClick(e, '#projects')}
-              className="group flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-primary to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
+              className="group flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-primary to-purple-600 text-pure-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               View Projects
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -81,7 +81,7 @@ export default function Hero() {
               href={personalInfo.resumeLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-7 py-3.5 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:bg-white/5 hover:border-gray-500 transition-all duration-300 hover:-translate-y-0.5"
+              className="flex items-center gap-2 px-7 py-3.5 border border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 hover:border-gray-500 transition-all duration-300 hover:-translate-y-0.5"
             >
               <Download size={18} />
               Download Resume
@@ -94,6 +94,7 @@ export default function Hero() {
               { icon: <Github size={20} />, href: personalInfo.github, label: 'GitHub' },
               { icon: <Linkedin size={20} />, href: personalInfo.linkedin, label: 'LinkedIn' },
               { icon: <SiLeetcode size={20} />, href: personalInfo.leetcode, label: 'LeetCode' },
+              { icon: <SiHackerrank size={20} />, href: personalInfo.hackerrank, label: 'HackerRank' },
               { icon: <Mail size={20} />, href: `mailto:${personalInfo.email}`, label: 'Email' },
             ].map((social) => (
               <a
@@ -102,7 +103,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
+                className="p-3 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:border-primary/30 dark:hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
               >
                 {social.icon}
               </a>

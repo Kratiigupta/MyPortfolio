@@ -5,18 +5,21 @@ import rudraImg from '../assets/projects/rudra.png';
 export const personalInfo = {
   name: 'Krati Gupta',
   roles: ['Software Developer', 'Full Stack Developer', 'Problem Solver', 'DSA Enthusiast'],
-  tagline: 'BCA student with a strong interest in software development and problem-solving. A quick learner with strong teamwork skills, seeking to build impactful real-world projects.',
+  tagline: 'BCA student with a strong interest in software development and problem-solving. Experienced in building full-stack web applications, participating in hackathons, and engaging in research activities. A quick learner seeking to contribute to real-world projects.',
   email: 'kratigupta.2433353@gmail.com',
   phone: '+91 91257 09300',
   location: 'Unnao, UP',
   education: 'B.C.A.',
   college: 'PSIT College of Higher Education',
+  university: 'CSJMU, Kanpur',
+  cgpa: '8.72',
+  graduationYear: '2027',
   github: 'https://github.com/Kratiigupta',
   githubUsername: 'Kratiigupta',
   linkedin: 'https://linkedin.com/in/krati-gupta25',
   leetcode: 'https://leetcode.com/u/kratii_gupta/',
   hackerrank: 'https://www.hackerrank.com/profile/24116002282_krti',
-  resumeLink: 'https://drive.google.com/file/d/1MmF68Su7TsHSx-T2CRlnbc7qXzWvQKZj/view?usp=drive_link',
+  resumeLink: 'https://drive.google.com/uc?export=download&id=1MmF68Su7TsHSx-T2CRlnbc7qXzWvQKZj',
 };
 
 export const navLinks = [
@@ -28,7 +31,39 @@ export const navLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
-export const aboutText = `I am a BCA student at PSIT College of Higher Education (2027) with an 8.72 CGPA. I have a strong interest in software development, problem-solving, and building robust web applications. I am experienced in working on both academic and personal projects, participating in technical events, and engaging in research activities. I'm a quick learner with strong communication skills, eager to gain industry experience.`;
+export const aboutBullets = [
+  "🎓 BCA Student at PSIT College of Higher Education",
+  "💻 Passionate Full-Stack Developer with a focus on scalable web applications",
+  "🚀 Active hackathon participant (Smart India Hackathon & Tech Expo 2025)",
+  "🔬 Engaged in research activities focusing on AI-driven cybersecurity",
+];
+
+export const education = [
+  {
+    degree: 'B.C.A.',
+    institution: 'PSIT College of Higher Education',
+    board: 'CSJMU, Kanpur',
+    year: '2024 – 2027',
+    score: '8.72 CGPA',
+    status: 'Current',
+  },
+  {
+    degree: 'Intermediate (XII)',
+    institution: 'P.M. Shri Kendriya Vidyalaya',
+    board: 'CBSE',
+    year: '2024',
+    score: '75%',
+    status: 'Completed',
+  },
+  {
+    degree: 'High School (X)',
+    institution: 'Adarsh Vidya Mandir',
+    board: 'CBSE',
+    year: '2022',
+    score: '84%',
+    status: 'Completed',
+  },
+];
 
 export const timeline = [
   { year: '2022', label: 'High School (84%)' },
@@ -37,57 +72,99 @@ export const timeline = [
   { year: '2027', label: 'BCA Graduation' },
 ];
 
-export const skills = [
-  // Languages
-  { name: 'JavaScript', icon: 'javascript' },
-  { name: 'TypeScript', icon: 'typescript' },
-  { name: 'Python', icon: 'python' },
-  { name: 'C++', icon: 'cpp' },
-  { name: 'SQL', icon: 'sql' },
-  // Frontend
-  { name: 'React.js', icon: 'react' },
-  { name: 'Next.js', icon: 'nextjs' },
-  { name: 'Tailwind CSS', icon: 'tailwind' },
-  // Backend & DB
-  { name: 'Node.js', icon: 'nodejs' },
-  { name: 'PostgreSQL', icon: 'postgresql' },
-  { name: 'MongoDB', icon: 'mongodb' },
-  { name: 'Git', icon: 'git' },
+// Skills organized by category (matching resume exactly)
+export const skillCategories = [
+  {
+    category: 'Languages',
+    skills: [
+      { name: 'JavaScript', icon: 'SiJavascript' },
+      { name: 'TypeScript', icon: 'SiTypescript' },
+      { name: 'Python', icon: 'SiPython' },
+      { name: 'C++', icon: 'SiCplusplus' },
+      { name: 'SQL', icon: 'LuDatabase' },
+    ],
+  },
+  {
+    category: 'Frontend',
+    skills: [
+      { name: 'React.js', icon: 'SiReact' },
+      { name: 'Next.js', icon: 'SiNextdotjs' },
+      { name: 'Tailwind CSS', icon: 'SiTailwindcss' },
+      { name: 'HTML5', icon: 'SiHtml5' },
+      { name: 'CSS3', icon: 'SiCss3' },
+    ],
+  },
+  {
+    category: 'Backend',
+    skills: [
+      { name: 'Node.js', icon: 'SiNodedotjs' },
+      { name: 'Express.js', icon: 'SiExpress' },
+      { name: 'REST APIs', icon: 'LuServerCog' },
+    ],
+  },
+  {
+    category: 'Databases',
+    skills: [
+      { name: 'PostgreSQL', icon: 'SiPostgresql' },
+      { name: 'MongoDB', icon: 'SiMongodb' },
+      { name: 'Supabase', icon: 'SiSupabase' },
+      { name: 'Oracle', icon: 'SiOracle' },
+    ],
+  },
+  {
+    category: 'Tools & Others',
+    skills: [
+      { name: 'Git', icon: 'SiGit' },
+      { name: 'GitHub', icon: 'SiGithub' },
+      { name: 'VS Code', icon: 'SiVisualstudiocode' },
+    ],
+  },
+];
+
+// Flat skills list for backward compatibility
+export const skills = skillCategories.flatMap((cat) => cat.skills);
+
+export const coreConceptsList = [
+  'Data Structures & Algorithms',
+  'Object-Oriented Programming',
+  'DBMS',
+  'Operating Systems',
+  'Cybersecurity',
 ];
 
 export const featuredProjects = [
   {
     id: 1,
     title: 'Sudarshan - Travel & Tourism',
-    description: 'A responsive full-stack travel platform featuring destination discovery, dynamic safety management, and user-friendly booking workflows.',
+    description: 'A responsive full-stack travel platform featuring destination discovery, dynamic safety management, and user-friendly booking workflows. Built with modern web technologies and a robust backend.',
     tech: ['React.js', 'Node.js', 'Express.js', 'Supabase', 'PostgreSQL'],
     image: sudarshanImg,
-    live: '#',
+    live: null,
     github: 'https://github.com/Kratiigupta',
     category: 'fullstack',
-    features: ['Destination discovery', 'Safety management', 'Booking workflows', 'Responsive design'],
+    features: ['Destination discovery', 'Dynamic safety management', 'User-friendly booking workflows', 'Responsive design'],
   },
   {
     id: 2,
-    title: 'Smart Edu Campus',
-    description: 'A comprehensive campus management platform supporting student, faculty, and administrative workflows.',
+    title: 'Smart Edu Campus (USCDLE)',
+    description: 'A comprehensive campus management platform supporting student, faculty, and administrative workflows. Developed with Next.js and TypeScript for type-safe, scalable architecture.',
     tech: ['Next.js', 'React.js', 'TypeScript', 'PostgreSQL'],
     image: smarteduImg,
-    live: '#',
+    live: null,
     github: 'https://github.com/Kratiigupta',
     category: 'web',
-    features: ['Student workflows', 'Faculty management', 'Administrative dashboard', 'Real-time analytics'],
+    features: ['Student workflow management', 'Faculty management', 'Administrative dashboard', 'Scalable architecture'],
   },
   {
     id: 3,
     title: 'Rudra IDS',
-    description: 'An AI-powered intrusion detection system capable of identifying and classifying network attacks using machine learning algorithms.',
-    tech: ['Python', 'Machine Learning'],
+    description: 'An AI-powered intrusion detection system capable of identifying and classifying network attacks using machine learning algorithms. Focused on anomaly detection for cybersecurity applications.',
+    tech: ['Python', 'Machine Learning', 'Anomaly Detection'],
     image: rudraImg,
-    live: '#',
+    live: null,
     github: 'https://github.com/Kratiigupta',
     category: 'ai',
-    features: ['Anomaly detection', 'Network classification', 'Machine learning', 'Traffic analysis'],
+    features: ['AI-powered detection', 'Network attack classification', 'Anomaly detection', 'Traffic analysis'],
   },
 ];
 
@@ -95,14 +172,36 @@ export const allProjects = [...featuredProjects];
 
 export const achievements = [
   { icon: 'code', number: 150, suffix: '+', label: 'Problems Solved' },
-  { icon: 'folder', number: 3, suffix: '+', label: 'Major Projects' },
-  { icon: 'certificate', number: 3, suffix: '', label: 'Research Papers' },
-  { icon: 'trophy', number: 5, suffix: '+', label: 'Certifications' },
+  { icon: 'folder', number: 3, suffix: '', label: 'Research Papers' },
+  { icon: 'certificate', number: 10, suffix: '', label: 'Certifications' },
+  { icon: 'trophy', number: 3, suffix: '', label: 'Major Projects' },
+];
+
+export const achievementHighlights = [
+  {
+    title: 'Smart India Hackathon (SIH)',
+    description: 'Participated in one of India\'s largest hackathons, building innovative solutions for real-world government and industry problems.',
+    icon: '🏆',
+  },
+  {
+    title: 'Tech Expo 2025',
+    description: 'Showcased projects and technical skills at Tech Expo 2025, demonstrating innovation and problem-solving capabilities.',
+    icon: '🚀',
+  },
+  {
+    title: '150+ Problems Solved',
+    description: 'Solved 150+ problems across LeetCode and HackerRank covering Data Structures, Algorithms, and Problem Solving.',
+    icon: '💡',
+  },
+  {
+    title: 'Hackathon & Competitions',
+    description: 'Regular participant in inter-college hackathons, coding competitions, and technical workshops.',
+    icon: '⚡',
+  },
 ];
 
 export const commandPaletteItems = [
   { name: 'Projects', icon: '📁', action: '#projects', type: 'navigate' },
-  { name: 'All Projects', icon: '🗂️', action: '/projects', type: 'route' },
   { name: 'Certificates', icon: '📜', action: '/certificates', type: 'route' },
   { name: 'Resume', icon: '📄', action: personalInfo.resumeLink, type: 'external' },
   { name: 'Contact', icon: '📧', action: '#contact', type: 'navigate' },
@@ -114,7 +213,7 @@ export const commandPaletteItems = [
   { name: 'Skills', icon: '🛠️', action: '#skills', type: 'navigate' },
 ];
 
-// Certificates Data
+// All 10 real certifications from resume
 export const certificatesList = [
   {
     id: 1,
@@ -122,7 +221,7 @@ export const certificatesList = [
     issuer: 'Cisco Networking Academy',
     category: 'Programming',
     icon: 'cisco',
-    link: '#'
+    link: '#',
   },
   {
     id: 2,
@@ -130,7 +229,7 @@ export const certificatesList = [
     issuer: 'Cisco Networking Academy',
     category: 'Programming',
     icon: 'cisco',
-    link: '#'
+    link: '#',
   },
   {
     id: 3,
@@ -138,7 +237,7 @@ export const certificatesList = [
     issuer: 'TCS Foundation',
     category: 'Cybersecurity',
     icon: 'tcs',
-    link: '#'
+    link: '#',
   },
   {
     id: 4,
@@ -146,7 +245,7 @@ export const certificatesList = [
     issuer: 'TCS Foundation',
     category: 'AI/ML',
     icon: 'tcs',
-    link: '#'
+    link: '#',
   },
   {
     id: 5,
@@ -154,7 +253,7 @@ export const certificatesList = [
     issuer: 'Infosys Springboard',
     category: 'Data Science',
     icon: 'infosys',
-    link: '#'
+    link: '#',
   },
   {
     id: 6,
@@ -162,15 +261,39 @@ export const certificatesList = [
     issuer: 'Infosys Springboard',
     category: 'Engineering',
     icon: 'infosys',
-    link: '#'
+    link: '#',
   },
   {
     id: 7,
+    title: 'Mastering CSS',
+    issuer: 'Infosys Springboard',
+    category: 'Frontend',
+    icon: 'infosys',
+    link: '#',
+  },
+  {
+    id: 8,
     title: 'Problem Solving (Basic)',
     issuer: 'HackerRank',
     category: 'Problem Solving',
     icon: 'hackerrank',
-    link: 'https://www.hackerrank.com/profile/24116002282_krti'
+    link: 'https://www.hackerrank.com/profile/24116002282_krti',
+  },
+  {
+    id: 9,
+    title: 'JavaScript',
+    issuer: 'HackerRank',
+    category: 'Programming',
+    icon: 'hackerrank',
+    link: 'https://www.hackerrank.com/profile/24116002282_krti',
+  },
+  {
+    id: 10,
+    title: 'SQL',
+    issuer: 'HackerRank',
+    category: 'Databases',
+    icon: 'hackerrank',
+    link: 'https://www.hackerrank.com/profile/24116002282_krti',
   },
 ];
 
@@ -189,5 +312,11 @@ export const researchList = [
     title: 'AI-Driven Hybrid Intrusion Detection Systems',
     role: 'Ongoing Research',
     event: 'A Comprehensive Survey',
-  }
+  },
 ];
+
+export const leadershipInfo = {
+  title: 'Secretary',
+  organization: 'Codester Club, PSIT CHE',
+  description: 'Spearheaded technical events, team-building activities, and coding sessions to foster a strong developer community within the college.',
+};

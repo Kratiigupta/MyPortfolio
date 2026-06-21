@@ -3,75 +3,8 @@ import { motion } from 'framer-motion';
 import { Github } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
-// Generate a mock contribution graph for visual display
-function ContributionGraph() {
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const days = ['Mon', '', 'Wed', '', 'Fri'];
-
-  // Generate deterministic-looking mock data
-  const cells = useMemo(() => {
-    const result = [];
-    for (let week = 0; week < 52; week++) {
-      for (let day = 0; day < 7; day++) {
-        // Create a pattern that looks organic
-        const seed = (week * 7 + day) * 2654435761;
-        const hash = ((seed >>> 0) % 100);
-        let level = 0;
-        if (hash > 75) level = 4;
-        else if (hash > 55) level = 3;
-        else if (hash > 35) level = 2;
-        else if (hash > 20) level = 1;
-        result.push(level);
-      }
-    }
-    return result;
-  }, []);
-
-  const levelColors = [
-    'bg-white/[0.03]',
-    'bg-primary/20',
-    'bg-primary/40',
-    'bg-primary/60',
-    'bg-primary/80',
-  ];
-
-  return (
-    <div className="overflow-x-auto">
-      {/* Month labels */}
-      <div className="flex mb-2 ml-10">
-        {months.map((m) => (
-          <span key={m} className="text-[10px] text-gray-600 flex-1">{m}</span>
-        ))}
-      </div>
-      {/* Grid */}
-      <div className="flex gap-0.5">
-        {/* Day labels */}
-        <div className="flex flex-col gap-0.5 mr-2 justify-around">
-          {days.map((d, i) => (
-            <span key={i} className="text-[10px] text-gray-600 h-[10px] leading-[10px]">{d}</span>
-          ))}
-        </div>
-        {/* Cells grid - 52 columns x 7 rows */}
-        <div className="flex gap-[3px]">
-          {Array.from({ length: 52 }, (_, week) => (
-            <div key={week} className="flex flex-col gap-[3px]">
-              {Array.from({ length: 7 }, (_, day) => {
-                const idx = week * 7 + day;
-                const level = cells[idx] || 0;
-                return (
-                  <div
-                    key={day}
-                    className={`w-[10px] h-[10px] rounded-[2px] ${levelColors[level]} transition-colors`}
-                  />
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+import { GitHubCalendar } from 'react-github-calendar';
+import { useTheme } from '../context/ThemeContext';
 
 function LanguageBar({ name, percentage, color }) {
   return (
@@ -93,6 +26,7 @@ function LanguageBar({ name, percentage, color }) {
 }
 
 export default function GitHubStats() {
+  const { theme, color } = useTheme();
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
@@ -111,10 +45,10 @@ export default function GitHubStats() {
   }, []);
 
   const languages = [
-    { name: 'JavaScript', percentage: 45, color: '#F7DF1E' },
-    { name: 'C++', percentage: 30, color: '#00599C' },
-    { name: 'Java', percentage: 15, color: '#ED8B00' },
-    { name: 'Python', percentage: 10, color: '#3776AB' },
+    { name: 'JavaScript', percentage: 40, color: '#F7DF1E' },
+    { name: 'Python', percentage: 25, color: '#3776AB' },
+    { name: 'C++', percentage: 20, color: '#00599C' },
+    { name: 'TypeScript', percentage: 15, color: '#3178C6' },
   ];
 
   return (
@@ -143,8 +77,16 @@ export default function GitHubStats() {
         >
           <div className="grid md:grid-cols-[1fr_300px] gap-8">
             {/* Contribution Graph */}
-            <div>
-              <ContributionGraph />
+            <div className="overflow-x-auto overflow-y-hidden text-gray-900 dark:text-white pb-2 hide-scrollbar">
+              <div className="min-w-[750px]">
+                <GitHubCalendar
+                  username={personalInfo.githubUsername}
+                  colorScheme={theme}
+                  blockSize={14}
+                  blockMargin={4}
+                  fontSize={12}
+                />
+              </div>
             </div>
 
             {/* Languages */}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Download, Menu, X, Settings } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
 import { navLinks, personalInfo } from '../data/portfolioData';
 import { useActiveSection } from '../hooks/useActiveSection';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -97,9 +97,6 @@ export default function Navbar() {
             <Download size={16} />
             Download Resume
           </a>
-          <button className="p-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-            <Settings size={18} />
-          </button>
         </div>
 
         {/* Mobile toggle */}

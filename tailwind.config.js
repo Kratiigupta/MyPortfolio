@@ -6,12 +6,21 @@ export default {
     extend: {
       colors: {
         dark: {
-          bg: '#0f172a',
-          card: '#1e293b',
-          border: '#334155',
+          bg: 'rgb(var(--bg-main))',
+          card: 'rgb(var(--bg-card))',
+          border: 'rgb(var(--bg-border))',
         },
-        primary: '#8b5cf6',
+        primary: 'rgb(var(--primary))',
         secondary: '#3b82f6',
+        white: 'rgb(var(--text-main))',
+        'pure-white': '#ffffff',
+        gray: {
+          300: 'rgb(var(--text-muted))',
+          400: 'rgb(var(--text-muted))',
+          500: 'rgb(var(--text-muted))',
+          600: 'rgb(var(--text-muted))',
+          900: '#111827',
+        }
       },
       fontFamily: {
         inter: ['Inter', 'system-ui', 'sans-serif'],
