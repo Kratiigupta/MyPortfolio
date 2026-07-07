@@ -29,15 +29,15 @@ export const certificatesList = [
   },
   {
     id: 5,
-    title: "Python Essentials",
-    file: "Python Essentials.pdf",
-    link: import.meta.env.BASE_URL + "certificates/Python%20Essentials.pdf",
+    title: "Python Essentials 2",
+    file: "Python Essentials 2.pdf",
+    link: import.meta.env.BASE_URL + "certificates/Python%20Essentials%202.pdf",
   },
   {
     id: 6,
-    title: "Python for Data Science",
-    file: "Python for Data Science.pdf",
-    link: import.meta.env.BASE_URL + "certificates/Python%20for%20Data%20Science.pdf",
+    title: "Python Essentials",
+    file: "Python Essentials.pdf",
+    link: import.meta.env.BASE_URL + "certificates/Python%20Essentials.pdf",
   },
   {
     id: 7,
