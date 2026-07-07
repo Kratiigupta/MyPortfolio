@@ -79,6 +79,7 @@ export default function Hero() {
             </a>
             <a
               href={personalInfo.resumeLink}
+              download="resume_krati.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-7 py-3.5 border border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 hover:border-gray-500 transition-all duration-300 hover:-translate-y-0.5"

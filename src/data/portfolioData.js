@@ -19,7 +19,7 @@ export const personalInfo = {
   linkedin: 'https://linkedin.com/in/krati-gupta25',
   leetcode: 'https://leetcode.com/u/kratii_gupta/',
   hackerrank: 'https://www.hackerrank.com/profile/24116002282_krti',
-  resumeLink: 'https://drive.google.com/uc?export=download&id=1MmF68Su7TsHSx-T2CRlnbc7qXzWvQKZj',
+  resumeLink: '/resume_krati.pdf',
 };
 
 export const navLinks = [
@@ -221,7 +221,7 @@ export const certificatesList = [
     issuer: 'Cisco Networking Academy',
     category: 'Programming',
     icon: 'cisco',
-    link: '#',
+    link: '/C--_Essentials_1_certificate_kratigupta-2433353-gmail-com_0e00228d-e2d2-40b9-83b4-c16780a55ae5.pdf',
   },
   {
     id: 2,
@@ -229,7 +229,7 @@ export const certificatesList = [
     issuer: 'Cisco Networking Academy',
     category: 'Programming',
     icon: 'cisco',
-    link: '#',
+    link: '/Krati%20Gupta_24116002282_Feb_2026_2.pdf',
   },
   {
     id: 3,
@@ -237,7 +237,7 @@ export const certificatesList = [
     issuer: 'TCS Foundation',
     category: 'Cybersecurity',
     icon: 'tcs',
-    link: '#',
+    link: '/Krati%20Gupta_24116002282_Feb_2026_3.pdf',
   },
   {
     id: 4,
@@ -245,7 +245,7 @@ export const certificatesList = [
     issuer: 'TCS Foundation',
     category: 'AI/ML',
     icon: 'tcs',
-    link: '#',
+    link: '/Krati%20Gupta_24116002282_Feb_2026_4.pdf',
   },
   {
     id: 5,
@@ -253,7 +253,7 @@ export const certificatesList = [
     issuer: 'Infosys Springboard',
     category: 'Data Science',
     icon: 'infosys',
-    link: '#',
+    link: '/Krati%20Gupta_24116002282_april_2026_5.pdf',
   },
   {
     id: 6,
@@ -261,7 +261,7 @@ export const certificatesList = [
     issuer: 'Infosys Springboard',
     category: 'Engineering',
     icon: 'infosys',
-    link: '#',
+    link: '/Krati%20Gupta_24116002282_may_2026_6.pdf',
   },
   {
     id: 7,
@@ -269,7 +269,7 @@ export const certificatesList = [
     issuer: 'Infosys Springboard',
     category: 'Frontend',
     icon: 'infosys',
-    link: '#',
+    link: '/Krati%20Gupta_24116002282_Feb_2026.pdf',
   },
   {
     id: 8,
