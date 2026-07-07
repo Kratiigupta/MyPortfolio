@@ -173,7 +173,7 @@ export const allProjects = [...featuredProjects];
 export const achievements = [
   { icon: 'code', number: 150, suffix: '+', label: 'Problems Solved' },
   { icon: 'folder', number: 3, suffix: '', label: 'Research Papers' },
-  { icon: 'certificate', number: 10, suffix: '', label: 'Certifications' },
+  { icon: 'certificate', number: 7, suffix: '', label: 'Certifications' },
   { icon: 'trophy', number: 3, suffix: '', label: 'Major Projects' },
 ];
 
@@ -212,90 +212,8 @@ export const commandPaletteItems = [
   { name: 'About', icon: '👤', action: '#about', type: 'navigate' },
   { name: 'Skills', icon: '🛠️', action: '#skills', type: 'navigate' },
 ];
-
-// All 10 real certifications from resume
-export const certificatesList = [
-  {
-    id: 1,
-    title: 'C++ Essentials',
-    issuer: 'Cisco Networking Academy',
-    category: 'Programming',
-    icon: 'cisco',
-    link: import.meta.env.BASE_URL + 'C--_Essentials_1_certificate_kratigupta-2433353-gmail-com_0e00228d-e2d2-40b9-83b4-c16780a55ae5.pdf',
-  },
-  {
-    id: 2,
-    title: 'Python Essentials',
-    issuer: 'Cisco Networking Academy',
-    category: 'Programming',
-    icon: 'cisco',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026.pdf',
-  },
-  {
-    id: 3,
-    title: 'AI and Cybersecurity Awareness',
-    issuer: 'TCS Foundation',
-    category: 'Cybersecurity',
-    icon: 'tcs',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_2.pdf',
-  },
-  {
-    id: 4,
-    title: 'Generative AI Essentials',
-    issuer: 'TCS Foundation',
-    category: 'AI/ML',
-    icon: 'tcs',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_3.pdf',
-  },
-  {
-    id: 5,
-    title: 'Python for Data Science',
-    issuer: 'Infosys Springboard',
-    category: 'Data Science',
-    icon: 'infosys',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_4.pdf',
-  },
-  {
-    id: 6,
-    title: 'Software Engineering',
-    issuer: 'Infosys Springboard',
-    category: 'Engineering',
-    icon: 'infosys',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_april_2026_5.pdf',
-  },
-  {
-    id: 7,
-    title: 'Introduction to Modern AI',
-    issuer: 'Cisco Networking Academy',
-    category: 'AI/ML',
-    icon: 'cisco',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_may_2026_6.pdf',
-  },
-  {
-    id: 8,
-    title: 'Problem Solving (Basic)',
-    issuer: 'HackerRank',
-    category: 'Problem Solving',
-    icon: 'hackerrank',
-    link: 'https://www.hackerrank.com/profile/24116002282_krti',
-  },
-  {
-    id: 9,
-    title: 'JavaScript',
-    issuer: 'HackerRank',
-    category: 'Programming',
-    icon: 'hackerrank',
-    link: 'https://www.hackerrank.com/profile/24116002282_krti',
-  },
-  {
-    id: 10,
-    title: 'SQL',
-    issuer: 'HackerRank',
-    category: 'Databases',
-    icon: 'hackerrank',
-    link: 'https://www.hackerrank.com/profile/24116002282_krti',
-  },
-];
+// Certificates are auto-generated from filenames — see src/data/certificatesGenerated.js
+// Run: node scripts/generate-certificates.cjs
 
 export const researchList = [
   {

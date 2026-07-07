@@ -1,30 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Award, Search, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Download, Award, Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { certificatesList } from '../data/portfolioData';
-import { SiCisco, SiHackerrank } from 'react-icons/si';
-
-const iconMap = {
-  cisco: <SiCisco size={40} className="text-[#049fd9]" />,
-  hackerrank: <SiHackerrank size={40} className="text-[#00EA64]" />,
-  tcs: <ShieldCheck size={40} className="text-[#0052cc]" />,
-  infosys: <Award size={40} className="text-[#007cc3]" />,
-};
+import { certificatesList } from '../data/certificatesGenerated';
 
 export default function CertificatesPage() {
-  const [filter, setFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
-  const categories = ['all', ...new Set(certificatesList.map((c) => c.issuer))];
-
-  const filtered = certificatesList.filter((c) => {
-    const matchesCategory = filter === 'all' || c.issuer === filter;
-    const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.issuer.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const filtered = certificatesList.filter((c) =>
+    c.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="min-h-screen bg-dark-bg text-white">
@@ -43,7 +29,7 @@ export default function CertificatesPage() {
           </div>
         </div>
 
-        {/* Search & Filters */}
+        {/* Search */}
         <div className="flex flex-col md:flex-row gap-4 mb-10">
           <div className="relative flex-1 max-w-md">
             <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
@@ -54,21 +40,6 @@ export default function CertificatesPage() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-11 pr-4 py-3 rounded-xl bg-dark-card border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 text-sm"
             />
-          </div>
-          <div className="flex gap-2 flex-wrap">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-                  filter === cat
-                    ? 'bg-primary text-white'
-                    : 'bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10'
-                }`}
-              >
-                {cat === 'all' ? 'All' : cat}
-              </button>
-            ))}
           </div>
         </div>
 
@@ -88,30 +59,36 @@ export default function CertificatesPage() {
                 <div>
                   <div className="flex justify-between items-start mb-6">
                     <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 shadow-inner">
-                      {iconMap[cert.icon] || <Award size={40} className="text-primary" />}
+                      <Award size={40} className="text-primary" />
                     </div>
-                    {cert.link && cert.link !== '#' && (
-                      <a 
-                        href={cert.link} 
-                        target="_blank" 
+                    <div className="flex gap-2">
+                      {/* View (opens PDF in new tab) */}
+                      <a
+                        href={cert.link}
+                        target="_blank"
                         rel="noopener noreferrer"
+                        title={`View ${cert.title}`}
                         className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-primary hover:bg-white/10 transition-colors"
                       >
                         <ExternalLink size={16} />
                       </a>
-                    )}
+                      {/* Download */}
+                      <a
+                        href={cert.link}
+                        download={cert.file}
+                        title={`Download ${cert.title}`}
+                        className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-primary hover:bg-white/10 transition-colors"
+                      >
+                        <Download size={16} />
+                      </a>
+                    </div>
                   </div>
-                  
+
+                  {/* Title derived from filename */}
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
                     {cert.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4">{cert.issuer}</p>
-                </div>
-
-                <div className="inline-flex">
-                  <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary border border-primary/20 rounded-lg">
-                    {cert.category}
-                  </span>
+                  <p className="text-gray-400 text-sm mb-4">{cert.file}</p>
                 </div>
               </motion.div>
             ))}

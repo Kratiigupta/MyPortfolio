@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "generate-certs": "node scripts/generate-certificates.cjs",
+    "predev": "npm run generate-certs",
     "dev": "vite",
+    "prebuild": "npm run generate-certs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",

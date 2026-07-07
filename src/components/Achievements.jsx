@@ -96,7 +96,7 @@ export default function Achievements() {
             href="#/certificates"
             className="group flex items-center gap-2 px-6 py-3 border border-white/10 text-gray-300 font-medium rounded-xl hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:text-white"
           >
-            View All 10 Certifications
+            View All Certifications
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
