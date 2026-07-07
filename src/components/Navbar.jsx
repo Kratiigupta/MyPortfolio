@@ -91,8 +91,6 @@ export default function Navbar() {
           <a
             href={personalInfo.resumeLink}
             download="resume_krati.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-primary/25"
           >
             <Download size={16} />
@@ -132,8 +130,6 @@ export default function Navbar() {
               <a
                 href={personalInfo.resumeLink}
                 download="resume_krati.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 mt-4 px-5 py-3 bg-primary text-white text-sm font-medium rounded-lg"
               >
                 <Download size={16} />

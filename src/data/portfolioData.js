@@ -237,7 +237,7 @@ export const certificatesList = [
     issuer: 'TCS Foundation',
     category: 'Cybersecurity',
     icon: 'tcs',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_april_2026_5.pdf',
+    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_2.pdf',
   },
   {
     id: 4,
@@ -245,7 +245,7 @@ export const certificatesList = [
     issuer: 'TCS Foundation',
     category: 'AI/ML',
     icon: 'tcs',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_may_2026_6.pdf',
+    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_3.pdf',
   },
   {
     id: 5,
@@ -253,7 +253,7 @@ export const certificatesList = [
     issuer: 'Infosys Springboard',
     category: 'Data Science',
     icon: 'infosys',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_2.pdf',
+    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_4.pdf',
   },
   {
     id: 6,
@@ -261,7 +261,7 @@ export const certificatesList = [
     issuer: 'Infosys Springboard',
     category: 'Engineering',
     icon: 'infosys',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_3.pdf',
+    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_april_2026_5.pdf',
   },
   {
     id: 7,
@@ -269,7 +269,7 @@ export const certificatesList = [
     issuer: 'Cisco Networking Academy',
     category: 'AI/ML',
     icon: 'cisco',
-    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_Feb_2026_4.pdf',
+    link: import.meta.env.BASE_URL + 'Krati%20Gupta_24116002282_may_2026_6.pdf',
   },
   {
     id: 8,

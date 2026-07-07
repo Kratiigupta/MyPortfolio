@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { personalInfo } from '../data/portfolioData';
 import { SiLeetcode, SiHackerrank } from 'react-icons/si';
@@ -76,16 +76,6 @@ export default function Hero() {
             >
               View Projects
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href={personalInfo.resumeLink}
-              download="resume_krati.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-7 py-3.5 border border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 hover:border-gray-500 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              <Download size={18} />
-              Download Resume
             </a>
           </div>
 
