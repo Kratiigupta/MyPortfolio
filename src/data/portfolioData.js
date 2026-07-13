@@ -12,7 +12,7 @@ export const personalInfo = {
   education: 'B.C.A.',
   college: 'PSIT College of Higher Education',
   university: 'CSJMU, Kanpur',
-  cgpa: '8.72',
+  cgpa: '9.0',
   graduationYear: '2027',
   github: 'https://github.com/Kratiigupta',
   githubUsername: 'Kratiigupta',
@@ -44,7 +44,7 @@ export const education = [
     institution: 'PSIT College of Higher Education',
     board: 'CSJMU, Kanpur',
     year: '2024 – 2027',
-    score: '8.72 CGPA',
+    score: '9.0 CGPA',
     status: 'Current',
   },
   {
