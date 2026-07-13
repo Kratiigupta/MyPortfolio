@@ -22,13 +22,7 @@ function ProjectModal({ project, onClose }) {
         className="glass-card rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header Image */}
-        {project.image && (
-          <div className="relative h-56 md:h-64 overflow-hidden rounded-t-2xl">
-            <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent" />
-          </div>
-        )}
+
 
         <div className="p-8">
           <div className="flex justify-between items-start mb-4">
@@ -133,28 +127,12 @@ export default function Projects() {
                 onClick={() => setSelectedProject(project)}
                 className="group cursor-pointer glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
               >
-                {/* Project Image */}
-                <div className="relative h-44 overflow-hidden">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
-                      <FolderGit2 size={48} className="text-white/20" />
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent" />
-                  <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-medium bg-primary/80 text-white rounded-lg backdrop-blur-sm">
+                {/* Content */}
+                <div className="p-6 relative">
+                  <span className="absolute top-6 right-6 px-2.5 py-1 text-[10px] font-medium bg-primary/20 text-primary border border-primary/20 rounded-lg backdrop-blur-sm">
                     {project.category}
                   </span>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-white mb-2 pr-20 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-gray-400 mb-4 line-clamp-2">{project.description}</p>
