@@ -5,7 +5,7 @@ import rudraImg from '../assets/projects/rudra.png';
 export const personalInfo = {
   name: 'Krati Gupta',
   roles: ['Software Developer', 'Full Stack Developer', 'Problem Solver', 'DSA Enthusiast'],
-  tagline: 'BCA student with a strong interest in software development and problem-solving. Experienced in building full-stack web applications, participating in hackathons, and engaging in research activities. A quick learner seeking to contribute to real-world projects.',
+  tagline: 'BCA student with a strong foundation in web development, and problem-solving. Passionate about building efficient and user-centric applications. Seeking an entry-level software development opportunity to apply my technical skills, continuously learn emerging technologies, and contribute to innovative software solutions.',
   email: 'kratigupta.2433353@gmail.com',
   phone: '+91 91257 09300',
   location: 'Unnao, UP',
@@ -82,6 +82,7 @@ export const skillCategories = [
       { name: 'TypeScript', icon: 'SiTypescript' },
       { name: 'Python', icon: 'SiPython' },
       { name: 'C++', icon: 'SiCplusplus' },
+      { name: 'C', icon: 'SiC' },
       { name: 'SQL', icon: 'LuDatabase' },
     ],
   },
@@ -124,6 +125,17 @@ export const skillCategories = [
       { name: 'VS Code', icon: 'SiVisualstudiocode' },
     ],
   },
+  {
+    category: 'Soft Skills',
+    icon: '🤝',
+    skills: [
+      { name: 'Problem Solving', icon: 'LuBrain' },
+      { name: 'Team Work', icon: 'LuUsers' },
+      { name: 'Adaptability', icon: 'LuRefreshCcw' },
+      { name: 'Time Management', icon: 'LuClock' },
+      { name: 'Creative Writing', icon: 'LuPenTool' },
+    ],
+  },
 ];
 
 // Flat skills list for backward compatibility
@@ -141,8 +153,8 @@ export const featuredProjects = [
   {
     id: 1,
     title: 'Sudarshan - Travel & Tourism',
-    description: 'A responsive full-stack travel platform featuring destination discovery, dynamic safety management, and user-friendly booking workflows. Built with modern web technologies and a robust backend.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'Supabase', 'PostgreSQL'],
+    description: 'Built a responsive travel platform for destination discovery and travel planning. Developed user-friendly booking workflows and integrated destination information with safety updates. Focused on improving user experience through a clean and responsive interface.',
+    tech: ['React.js', 'Node.js', 'Express.js', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Git'],
     image: null,
     live: null,
     github: 'https://github.com/Kratiigupta',
@@ -152,8 +164,8 @@ export const featuredProjects = [
   {
     id: 2,
     title: 'Smart Edu Campus (USCDLE)',
-    description: 'A comprehensive campus management platform supporting student, faculty, and administrative workflows. Developed with Next.js and TypeScript for type-safe, scalable architecture.',
-    tech: ['Next.js', 'React.js', 'TypeScript', 'PostgreSQL'],
+    description: 'Developed a campus management platform for students, faculty, and administrators with role-based access. Implemented modules for attendance management, student records, and administrative workflows. Designed a responsive and user-friendly interface to simplify campus operations.',
+    tech: ['Next.js', 'React.js', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Git'],
     image: null,
     live: null,
     github: 'https://github.com/Kratiigupta',
@@ -235,6 +247,11 @@ export const researchList = [
     title: 'AI-Driven Hybrid Intrusion Detection Systems',
     role: 'Ongoing Research',
     event: 'A Comprehensive Survey',
+  },
+  {
+    title: 'International Conference (ICONSDG 2025)',
+    role: 'Attendee',
+    event: 'PSIT-CHE',
   },
 ];
 
