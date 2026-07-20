@@ -13,7 +13,7 @@ export const certificatesList = [
     id: 2,
     title: "C++ Essentials",
     file: "C++ Essentials.pdf",
-    link: import.meta.env.BASE_URL + "certificates/C++%20Essentials.pdf",
+    link: import.meta.env.BASE_URL + "certificates/C%2B%2B%20Essentials.pdf",
   },
   {
     id: 3,

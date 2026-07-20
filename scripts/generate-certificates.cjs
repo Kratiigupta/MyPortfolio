@@ -28,8 +28,8 @@ if (files.length === 0) {
 // Build the JS source
 const entries = files.map((filename, index) => {
   const title = filename.replace(/\.pdf$/i, '');
-  // Encode for URL but preserve + (encodeURIComponent turns + into %2B which breaks serving)
-  const encodedFilename = encodeURIComponent(filename).replace(/%2B/g, '+');
+  // Encode for URL. encodeURIComponent properly encodes + to %2B, which is required for static file serving.
+  const encodedFilename = encodeURIComponent(filename);
   return `  {
     id: ${index + 1},
     title: ${JSON.stringify(title)},

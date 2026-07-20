@@ -76,6 +76,7 @@ export const timeline = [
 export const skillCategories = [
   {
     category: 'Languages',
+    icon: '💻',
     skills: [
       { name: 'JavaScript', icon: 'SiJavascript' },
       { name: 'TypeScript', icon: 'SiTypescript' },
@@ -86,6 +87,7 @@ export const skillCategories = [
   },
   {
     category: 'Frontend',
+    icon: '🎨',
     skills: [
       { name: 'React.js', icon: 'SiReact' },
       { name: 'Next.js', icon: 'SiNextdotjs' },
@@ -96,6 +98,7 @@ export const skillCategories = [
   },
   {
     category: 'Backend',
+    icon: '⚙️',
     skills: [
       { name: 'Node.js', icon: 'SiNodedotjs' },
       { name: 'Express.js', icon: 'SiExpress' },
@@ -104,6 +107,7 @@ export const skillCategories = [
   },
   {
     category: 'Databases',
+    icon: '🗄️',
     skills: [
       { name: 'PostgreSQL', icon: 'SiPostgresql' },
       { name: 'MongoDB', icon: 'SiMongodb' },
@@ -113,6 +117,7 @@ export const skillCategories = [
   },
   {
     category: 'Tools & Others',
+    icon: '🛠️',
     skills: [
       { name: 'Git', icon: 'SiGit' },
       { name: 'GitHub', icon: 'SiGithub' },
